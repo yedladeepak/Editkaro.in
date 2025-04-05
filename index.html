@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editkaro.in - Social Media & Video Editing Agency</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Editkaro.in</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Grow Your Social Media with Professional Editing</h2>
+    <p>We provide top-notch video editing services for influencers, businesses, and brands.</p>
+
+    <!-- Email Subscription Form -->
+    <!-- Inside your index.html -->
+     </section>
+<form id="emailForm">
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+    <p id="emailResponse" style="color: green;" aria-live="polite"></p>
+  </form>
+  
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      const email = document.getElementById("email").value;
+  
+      fetch("https://script.google.com/macros/s/AKfycbyKSU0JiiXg49K8u3T8_fyF0xeNUcOYjUPQZ7UkcstA9BPxaH6upKGyga6rYmHZhE76wg/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ email }),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          document.getElementById("emailResponse").textContent = "✅ Subscription successful!";
+        } else {
+          document.getElementById("emailResponse").textContent = "❌ Error: " + data.message;
+        }
+      })
+      .catch(() => {
+        document.getElementById("emailResponse").textContent = "❌ Network error. Please try again.";
+      });
+    });
+  </script>
+  
+</body>
+</html>

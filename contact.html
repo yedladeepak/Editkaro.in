@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Editkaro.in</title>
+    <link rel="stylesheet" href="contact-style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="tel" name="phone" placeholder="Your Phone" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+            <p id="msg" style="color: green;" aria-live="polite"></p>
+          </form>
+          
+        <p id="contactResponse" style="color: green;" aria-live="polite"></p>
+    </section>
+      
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const form = new FormData(this);
+      
+          fetch("https://script.google.com/macros/s/AKfycbyKSU0JiiXg49K8u3T8_fyF0xeNUcOYjUPQZ7UkcstA9BPxaH6upKGyga6rYmHZhE76wg/exec", {
+            method: "POST",
+            body: form,
+          })
+          .then(res => res.json())
+          .then(data => {
+            const msg = document.getElementById("msg");
+            if (data.status === "success") {
+              msg.textContent = "✅ Thank you for your message!";
+              this.reset();
+            } else {
+              msg.textContent = "❌ Error: " + data.message;
+            }
+          })
+          .catch(() => {
+            document.getElementById("msg").textContent = "❌ Network error. Please try again.";
+          });
+        });
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #eef3f8; /* Soft cool background */
+    color: #2f3e46; /* Deep blue-gray text */
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #6a82fb, #56ccf2); /* Cool blue gradient */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #a0c4ff; /* Light blue hover */
+}
+
+/* Contact Form Section */
+.contact-form {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: #3a4a6b; /* Muted blue */
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #5e81ac; /* Light navy blue */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6a82fb; /* Primary accent blue */
+}
+
+.contact-form button {
+    background: #6a82fb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #4d6ec6; /* Slightly darker blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+    }
+}

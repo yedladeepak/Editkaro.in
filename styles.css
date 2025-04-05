@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eef2f7; /* Soft cool background */
+    color: #2f3e46; /* Deep slate text */
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #5b86e5, #36d1dc); /* Cool gradient */
+    padding: 20px;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #82c0ff;
+}
+
+/* Home Section */
+#home {
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#home h2 {
+    font-size: 2rem;
+    color: #3a4a6b;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.1rem;
+    color: #5f6f81;
+}
+
+/* Email Subscription Form */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"] {
+    width: 80%;
+    max-width: 350px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #5b86e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input[type="email"]:focus {
+    border-color: #36d1dc;
+}
+
+/* Button Styling */
+button {
+    background: #36d1dc;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #5b86e5;
+}
+
+/* Subscription Message */
+#message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #home {
+        padding: 30px 15px;
+    }
+
+    input[type="email"] {
+        width: 90%;
+    }
+}
